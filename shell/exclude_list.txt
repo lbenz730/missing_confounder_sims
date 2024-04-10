@@ -1,0 +1,9 @@
+model_objects
+model_objects/*
+logs
+logs/*
+input_data
+input_data/*
+subject_contributions
+subject_contributions/*
+subject_key.csv

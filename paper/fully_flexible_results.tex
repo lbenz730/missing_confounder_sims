@@ -1,0 +1,22 @@
+\begin{table}
+\centering
+\begin{tabular}[ht]{|>{}c|c|c|c|c|>{}c|}
+\hline
+\multicolumn{6}{|c|}{\textbf{Non-Parametric Nuisance Model Simulation}} \\
+\cline{1-6}
+\textbf{Estimator} & \textbf{Nusiance Models} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{Relative Uncertainty}\\
+\hline
+ & Parametric & 0.6 & 0.6 & 0.009 & 1.000\\
+\cline{2-6}
+\multirow{-2}{*}{\centering\arraybackslash CCMAR IF} & Non-Parametric & 0.6 & 1.1 & 0.013 & 1.390\\
+\cline{1-6}
+ & Parametric & 0.7 & 0.9 & 0.007 & 0.734\\
+\cline{2-6}
+\multirow{-2}{*}{\centering\arraybackslash CCMAR IWOR} & Non-Parametric & 5.9 & 5.9 & 0.008 & 0.865\\
+\hline
+\multicolumn{6}{l}{\rule{0pt}{1em}IF = Influence Function; IWOR = Inverse-Weighted Outcome Regression}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}\% Bias = 100 $\times$ Relative Bias of Mean Average Treatment Effect Estimate}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}\% M-Bias = 100 $\times$ Relative Bias of Median Average Treatment Effect Estimate}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}Relative Uncertainty = Ratio of standard error to standard error of Parametric CCMAR-based IF Estimator}\\
+\end{tabular}
+\end{table}\label{table:results_ff}
