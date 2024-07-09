@@ -1,6 +1,8 @@
 # Missing Confounder Simulations
 
-Repository for simulations exploring causal inference methods with partially missing confounders. Comparison of complete case missing at random (CCMAR) based estimators from Levis et al. as well as ad-hoc but reasonable methods that rely on imputation of missing data + standard causal inference methods. 
+Repository for simulations exploring causal inference methods with partially missing confounders. Comparison of complete case missing at random (CCMAR) based estimators from (Levis et al., CJS, 2024) as well as ad-hoc but reasonable methods that rely on imputation of missing data + standard causal inference methods. For more information, please see our paper 
+
+Benz, L., Levis, A., and Haneuse, S. "Comparing Causal Inference Methods for Point Exposures with Missing Confounders: A Simulation Study." _Under Review_, 2024. [[Pre-Print](https://arxiv.org/abs/2407.06038)]
 
 ---
 
