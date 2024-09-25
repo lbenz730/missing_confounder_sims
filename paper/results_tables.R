@@ -39,7 +39,7 @@ get_sim_results <- function(sim_id) {
               'std_dev' = sd(ate_hat)) %>% 
     ungroup() %>% 
     mutate('rel_uncertainty' = std_dev/std_dev[which(method == 'Levis IF')]) %>% 
-    mutate('group' = case_when(grepl('Levis', method) ~ '1 CCMAR-based',
+    mutate('group' = case_when(grepl('Levis', method) ~ '1 \\shortstack{CCMAR-\\\\based}',
                                outcome_model == 'OLS' ~ '2 \\shortstack{Outcome\\\\Regression}',
                                outcome_model == 'GAM' ~ '3 \\shortstack{Outcome\\\\Regression}',
                                outcome_model == 'Random Forest' ~ '4 \\shortstack{Outcome\\\\Regression}',
@@ -55,7 +55,8 @@ get_sim_results <- function(sim_id) {
     mutate('outcome_ipw' = case_when(!is.na(outcome_model) ~ outcome_model,
                                      !is.na(ipw_model) ~ ipw_model,
                                      T ~ method)) %>% 
-    mutate('outcome_ipw' = case_when(outcome_ipw == 'Random Forest' ~ '\\shortstack{Random\\\\Forest}',
+    mutate('outcome_ipw' = case_when(outcome_ipw == 'CCMAR-based' ~ '\\shortstack{CCMAR-\\\\based}',
+                                     outcome_ipw == 'Random Forest' ~ '\\shortstack{Random\\\\Forest}',
                                      outcome_ipw == 'Logistic Regression' ~ '\\shortstack{Logistic\\\\Regression}',
                                      T ~ outcome_ipw)) %>% 
     select(group, outcome_ipw, interactions, imputation_model, mean_rel_bias, median_rel_bias, std_dev, rel_uncertainty) %>% 
@@ -84,7 +85,7 @@ get_latex <- function(paper_ids, table_ids, caption = T) {
                 names_vary = 'slowest')  %>% 
     unnest(cols = everything()) 
   names(df_tbl) <- c('  ', ' ', 'Interactions', 'Imputation', 
-                     rep(c('\\% Bias', '\\% M-Bias', 'SE', 'Relative Uncertainty'), length(paper_ids)))
+                     rep(c('\\% Bias', '\\% M-Bias', 'SE', 'RU'), length(paper_ids)))
   
   latex <- 
     df_tbl %>% 
@@ -95,24 +96,23 @@ get_latex <- function(paper_ids, table_ids, caption = T) {
     add_header_above(col_lengths, bold = T) %>%
     row_spec(0, bold = T) %>% 
     footnote(general = c("IF = Influence Function; IWOR = Inverse-Weighted Outcome Regression",
-                         '\\\\% Bias = 100 $\\\\times$ Relative Bias of Mean Average Treatment Effect Estimate',
-                         '\\\\% M-Bias = 100 $\\\\times$ Relative Bias of Median Average Treatment Effect Estimate',
-                         "Relative Uncertainty = Ratio of standard error to standard error of CCMAR-based IF Estimator",
+                         '\\\\% Bias/\\\\% M-Bias = 100 $\\\\times$ bias of mean/median ATE estimate relative to true ATE',
+                         "Relative Uncertainty (RU) = Ratio of standard error to standard error of CCMAR-based IF Estimator",
                          "Imputation: Linear Regression (OLS), Logistic Regression (LR), True Data Generating Process (DGP)"),
              general_title = '', 
              escape = F) %>% 
-    gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-    gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .) %>% 
-    gsub('\\multicolumn\\{8\\}\\{c}', '\\multicolumn\\{8\\}\\{\\|c\\|\\}', .) %>% 
+    gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+    gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+    gsub('\\multicolumn\\{8\\}\\{c}', '\\multicolumn\\{8\\}\\{c\\}', .) %>% 
     gsub('tabular\\}\\[t', 'tabular\\}\\[ht', .)
   
   
-  latex <- paste0("\\begin{table}\n\\centering", latex, '\n\\end{table}')
+  latex <- paste0("\\begin{table}\n\\centering\\footnotesize", latex, '\n\\end{table}')
   
   if(length(paper_ids) == 1) {
     latex <- 
       gsub('\\\\textbf\\{\\s+\\}\\s+\\&\\s+\\\\textbf\\{\\s+\\}',
-           '\\\\multicolumn\\{2\\}\\{\\|c\\|\\}\\{\\\\textbf\\{Model\\}\\}', 
+           '\\\\multicolumn\\{2\\}\\{c\\}\\{\\\\textbf\\{Model\\}\\}', 
            latex)
     
     latex <- gsub('\\\\end\\{table\\}', '', latex)
@@ -125,6 +125,14 @@ get_latex <- function(paper_ids, table_ids, caption = T) {
       latex <- paste0(latex[1], paste0('\\end{tabular}', cap), latex[2])
     }
   }
+  
+  ### Changes for v2 Submission
+  latex <- gsub('cline', 'cmidrule', latex)
+  latex <- gsub('tabular', 'tabularx', latex)
+  latex <-
+    gsub('\\[ht\\]\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}',
+         '\\{\\\\textwidth\\}\\{c\\@\\{\\}c\\@\\{\\}c\\@\\{\\}c\\@\\{\\}c\\@\\{\\}cc\\@\\{\\}c}',
+         latex)
   
   return(latex)
 }
@@ -153,11 +161,12 @@ df_tbl <-
   slice(c(1:2, 43:46, 3:42)) %>% 
   mutate('rel_uncertainty' = std_dev/std_dev[1])
 
+df_tbl$group[1:2] <- '\\shortstack{CCMAR-\\\\based}'
 df_tbl$group[3:4] <- paste0('\\shortstack{Flexible Levis\\\\(Gamma $\\lambda_1$)}')
 df_tbl$group[5:6] <- paste0('\\shortstack{Flexible Levis\\\\(Guassian $\\lambda_1$)}')
 
 names(df_tbl) <- c('  ', ' ', 'Interactions', 'Imputation', 
-                   rep(c('\\% Bias', '\\% M-Bias', 'SE', 'Relative Uncertainty'), 1))
+                   rep(c('\\% Bias', '\\% M-Bias', 'SE', 'RU'), 1))
 
 ltx_4 <- 
   df_tbl %>% 
@@ -168,21 +177,25 @@ ltx_4 <-
   add_header_above(c("Data Driven Simulation Scenario 4" = 8), bold = T) %>%
   row_spec(0, bold = T) %>% 
   footnote(general = c("IF = Influence Function; IWOR = Inverse-Weighted Outcome Regression",
-                       '\\\\% Bias = 100 $\\\\times$ Relative Bias of Mean Average Treatment Effect Estimate',
-                       '\\\\% M-Bias = 100 $\\\\times$ Relative Bias of Median Average Treatment Effect Estimate',
-                       "Relative Uncertainty = Ratio of standard error to standard error of Levis IF Estimator",
+                       '\\\\% Bias/\\\\% M-Bias = 100 $\\\\times$ bias of mean/median ATE estimate relative to true ATE',
+                       "Relative Uncertainty (RU) = Ratio of standard error to standard error of CCMAR-based IF Estimator",
                        "Imputation: Linear Regression (OLS), Logistic Regression (LR), True Data Generating Process (DGP)"),
            general_title = '', 
            escape = F) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{8\\}\\{c}', '\\multicolumn\\{8\\}\\{\\|c\\|\\}', .) %>% 
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{8\\}\\{c}', '\\multicolumn\\{8\\}\\{c\\}', .) %>% 
   gsub('tabular\\}\\[t', 'tabular\\}\\[ht', .) %>% 
-  paste0("\\begin{table}\n\\centering", ., '\n\\end{table}') %>% 
+  paste0("\\begin{table}\n\\centering\n\\footnotesize", ., '\n\\end{table}') %>% 
   gsub('\\\\textbf\\{\\s+\\}\\s+\\&\\s+\\\\textbf\\{\\s+\\}',
-       '\\\\multicolumn\\{2\\}\\{\\|c\\|\\}\\{\\\\textbf\\{Model\\}\\}', 
+       '\\\\multicolumn\\{2\\}\\{c\\}\\{\\\\textbf\\{Model\\}\\}', 
        .) %>% 
-  paste0(., '\\label{table:results_', 4, '}')
+  paste0(., '\\label{table:results_', 4, '}') %>% 
+  gsub('cline', 'cmidrule', .) %>% 
+  gsub('tabular', 'tabularx', .) %>% 
+  gsub('\\[ht\\]\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}',
+       '\\{\\\\textwidth\\}\\{c\\@\\{\\}c\\@\\{\\}c\\@\\{\\}c\\@\\{\\}c\\@\\{\\}cc\\@\\{\\}c}',
+       .)
 
 write(paste(ltx_1, ltx_2, ltx_3, ltx_4, sep = '\n\n\n\n'), 'paper/results.tex')
 
@@ -190,7 +203,11 @@ write(paste(ltx_1, ltx_2, ltx_3, ltx_4, sep = '\n\n\n\n'), 'paper/results.tex')
 supp_id <- 
   df_id %>% 
   filter(paper_id > 4)
-ltx_sup <- paste(map2_chr(supp_id$paper_id, supp_id$table_id, ~get_latex(.x, .y)), collapse = '\n\n')
+ltx_sup <- 
+  paste(map2_chr(supp_id$paper_id, supp_id$table_id, ~get_latex(.x, .y)), collapse = '\n\n') %>% 
+  gsub('\\|c\\|', 'c', .) %>% 
+  gsub('\\centering\\arraybackslash CCMAR-based', '\\centering\\arraybackslash \\shortstack{CCMAR-\\based}', .)
+  
 write(ltx_sup, 'paper/supplement_results.tex')
 
 

@@ -1,310 +1,307 @@
 \begin{table}
-\centering
-\begin{tabular}[ht]{|>{}c|c|c|c|c|c|c|>{}c|}
+\centering\footnotesize
+\begin{tabularx}{\textwidth}{c@{}c@{}c@{}c@{}c@{}cc@{}c}
 \hline
-\multicolumn{8}{|c|}{\textbf{Data Driven Simulation Scenario 1}} \\
-\cline{1-8}
-\multicolumn{2}{|c|}{\textbf{Model}} & \textbf{Interactions} & \textbf{Imputation} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{Relative Uncertainty}\\
+\multicolumn{8}{c}{\textbf{Data Driven Simulation Scenario 1}} \\
+\cmidrule{1-8}
+\multicolumn{2}{c}{\textbf{Model}} & \textbf{Interactions} & \textbf{Imputation} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{RU}\\
 \hline
  & IF &  & --- & 0 & 0 & 0.006 & 1.000\\
-\cline{2-2}
-\cline{4-8}
-\multirow{-2}{*}{\centering\arraybackslash CCMAR-based} & IWOR & \multirow{-2}{*}{\centering\arraybackslash ---} & --- & -1 & -6 & 0.029 & 5.088\\
-\cline{1-8}
+\cmidrule{2-2}
+\cmidrule{4-8}
+\multirow{-2}{*}{\centering\arraybackslash \shortstack{CCMAR-\\based}} & IWOR & \multirow{-2}{*}{\centering\arraybackslash ---} & --- & -1 & -6 & 0.029 & 5.088\\
+\cmidrule{1-8}
  &  &  & OLS/LR & 15 & 15 & 0.006 & 1.005\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 12 & 12 & 0.006 & 1.015\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 14 & 14 & 0.006 & 1.005\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -21 & -21 & 0.006 & 1.049\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & 0 & 0 & 0.005 & 0.812\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.005 & 0.824\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.005 & 0.813\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash OLS} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -24 & -24 & 0.006 & 0.973\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & 15 & 15 & 0.006 & 1.007\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 12 & 12 & 0.006 & 1.011\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 14 & 14 & 0.006 & 1.006\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -21 & -21 & 0.006 & 1.050\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & 0 & 0 & 0.005 & 0.846\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.005 & 0.848\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.005 & 0.821\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash GAM} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -23 & -23 & 0.006 & 0.982\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -1 & -1 & 0.005 & 0.836\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -1 & 0.005 & 0.835\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & -1 & -1 & 0.005 & 0.831\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-20}{*}{\centering\arraybackslash \shortstack{Outcome\\Regression}} & \multirow{-4}{*}{\centering\arraybackslash \shortstack{Random\\Forest}} & \multirow{-4}{*}{\centering\arraybackslash ---} & --- & -30 & -30 & 0.006 & 1.008\\
-\cline{1-8}
+\cmidrule{1-8}
  &  &  & OLS/LR & 8 & 8 & 0.006 & 0.959\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 6 & 6 & 0.006 & 0.958\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 8 & 8 & 0.006 & 0.965\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -22 & -22 & 0.007 & 1.175\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & 0 & 0 & 0.005 & 0.857\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.005 & 0.886\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 1 & 1 & 0.005 & 0.865\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash \shortstack{Logistic\\Regression}} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -26 & -26 & 0.007 & 1.203\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & 6 & 6 & 0.006 & 1.003\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 4 & 4 & 0.006 & 0.988\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 7 & 7 & 0.006 & 0.956\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -23 & -23 & 0.007 & 1.174\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & 0 & -1 & 0.005 & 0.895\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.005 & 0.934\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 1 & 1 & 0.005 & 0.839\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash \shortstack{GAM\\(Logit Link)}} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -26 & -26 & 0.007 & 1.250\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -1 & -1 & 0.005 & 0.896\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -1 & 0.005 & 0.903\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 1 & 1 & 0.005 & 0.904\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-20}{*}{\centering\arraybackslash IPW} & \multirow{-4}{*}{\centering\arraybackslash \shortstack{Random\\Forest}} & \multirow{-4}{*}{\centering\arraybackslash ---} & --- & -24 & -24 & 0.006 & 0.959\\
 \hline
 \multicolumn{8}{l}{\rule{0pt}{1em}IF = Influence Function; IWOR = Inverse-Weighted Outcome Regression}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}\% Bias = 100 $\times$ Relative Bias of Mean Average Treatment Effect Estimate}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}\% M-Bias = 100 $\times$ Relative Bias of Median Average Treatment Effect Estimate}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}Relative Uncertainty = Ratio of standard error to standard error of CCMAR-based IF Estimator}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}\% Bias/\% M-Bias = 100 $\times$ bias of mean/median ATE estimate relative to true ATE}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}Relative Uncertainty (RU) = Ratio of standard error to standard error of CCMAR-based IF Estimator}\\
 \multicolumn{8}{l}{\rule{0pt}{1em}Imputation: Linear Regression (OLS), Logistic Regression (LR), True Data Generating Process (DGP)}\\
-\end{tabular}\caption{Data Driven Simulation Scenario \# 1: Factorization in Equation~\eqref{eqn:levis_factorization}, 1 partially missing confounder.}
+\end{tabularx}\caption{Data Driven Simulation Scenario \# 1: Factorization in Equation~\eqref{eqn:levis_factorization}, 1 partially missing confounder.}
 \label{table:results_1}
 \end{table}
 
 
 
 \begin{table}
-\centering
-\begin{tabular}[ht]{|>{}c|c|c|c|c|c|c|>{}c|}
+\centering\footnotesize
+\begin{tabularx}{\textwidth}{c@{}c@{}c@{}c@{}c@{}cc@{}c}
 \hline
-\multicolumn{8}{|c|}{\textbf{Data Driven Simulation Scenario 2}} \\
-\cline{1-8}
-\multicolumn{2}{|c|}{\textbf{Model}} & \textbf{Interactions} & \textbf{Imputation} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{Relative Uncertainty}\\
+\multicolumn{8}{c}{\textbf{Data Driven Simulation Scenario 2}} \\
+\cmidrule{1-8}
+\multicolumn{2}{c}{\textbf{Model}} & \textbf{Interactions} & \textbf{Imputation} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{RU}\\
 \hline
  & IF &  & --- & 0 & 0 & 0.004 & 1.000\\
-\cline{2-2}
-\cline{4-8}
-\multirow{-2}{*}{\centering\arraybackslash CCMAR-based} & IWOR & \multirow{-2}{*}{\centering\arraybackslash ---} & --- & -1 & -5 & 0.020 & 4.587\\
-\cline{1-8}
+\cmidrule{2-2}
+\cmidrule{4-8}
+\multirow{-2}{*}{\centering\arraybackslash \shortstack{CCMAR-\\based}} & IWOR & \multirow{-2}{*}{\centering\arraybackslash ---} & --- & -1 & -5 & 0.020 & 4.587\\
+\cmidrule{1-8}
  &  &  & OLS/LR & 5 & 5 & 0.005 & 1.100\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 5 & 5 & 0.005 & 1.099\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 5 & 5 & 0.005 & 1.099\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -23 & -23 & 0.005 & 1.235\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & 0 & -1 & 0.004 & 0.947\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -1 & 0.004 & 0.947\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.948\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash OLS} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -19 & -19 & 0.005 & 1.207\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & 4 & 4 & 0.005 & 1.113\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 4 & 4 & 0.005 & 1.115\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 5 & 5 & 0.005 & 1.100\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -23 & -23 & 0.005 & 1.237\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & -1 & -1 & 0.004 & 0.989\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -1 & 0.004 & 0.991\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.948\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash GAM} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -18 & -18 & 0.005 & 1.215\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -1 & -1 & 0.004 & 0.974\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -2 & 0.004 & 0.977\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.960\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-20}{*}{\centering\arraybackslash \shortstack{Outcome\\Regression}} & \multirow{-4}{*}{\centering\arraybackslash \shortstack{Random\\Forest}} & \multirow{-4}{*}{\centering\arraybackslash ---} & --- & -25 & -25 & 0.006 & 1.267\\
-\cline{1-8}
+\cmidrule{1-8}
  &  &  & OLS/LR & -4 & -4 & 0.005 & 1.048\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -4 & -4 & 0.005 & 1.046\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & -4 & -4 & 0.005 & 1.048\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -26 & -26 & 0.006 & 1.262\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & 0 & 0 & 0.004 & 0.955\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.004 & 0.960\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.956\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash \shortstack{Logistic\\Regression}} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -22 & -23 & 0.006 & 1.356\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -6 & -6 & 0.006 & 1.320\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -6 & -6 & 0.006 & 1.402\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & -4 & -4 & 0.005 & 1.043\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -26 & -26 & 0.006 & 1.267\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & -2 & -2 & 0.005 & 1.129\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -2 & -2 & 0.005 & 1.177\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.954\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash \shortstack{GAM\\(Logit Link)}} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -22 & -22 & 0.007 & 1.577\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -3 & -3 & 0.004 & 0.990\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -3 & -3 & 0.004 & 0.993\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.984\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-20}{*}{\centering\arraybackslash IPW} & \multirow{-4}{*}{\centering\arraybackslash \shortstack{Random\\Forest}} & \multirow{-4}{*}{\centering\arraybackslash ---} & --- & -21 & -21 & 0.005 & 1.108\\
 \hline
 \multicolumn{8}{l}{\rule{0pt}{1em}IF = Influence Function; IWOR = Inverse-Weighted Outcome Regression}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}\% Bias = 100 $\times$ Relative Bias of Mean Average Treatment Effect Estimate}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}\% M-Bias = 100 $\times$ Relative Bias of Median Average Treatment Effect Estimate}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}Relative Uncertainty = Ratio of standard error to standard error of CCMAR-based IF Estimator}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}\% Bias/\% M-Bias = 100 $\times$ bias of mean/median ATE estimate relative to true ATE}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}Relative Uncertainty (RU) = Ratio of standard error to standard error of CCMAR-based IF Estimator}\\
 \multicolumn{8}{l}{\rule{0pt}{1em}Imputation: Linear Regression (OLS), Logistic Regression (LR), True Data Generating Process (DGP)}\\
-\end{tabular}\caption{Data Driven Simulation Scenario \# 2: Factorization in Equation~\eqref{eqn:levis_factorization}, 1 partially missing confounder, additional non-linearities and interactions in imputation mean model,induced skew in distribution of imputation model.}
+\end{tabularx}\caption{Data Driven Simulation Scenario \# 2: Factorization in Equation~\eqref{eqn:levis_factorization}, 1 partially missing confounder, additional non-linearities and interactions in imputation mean model,induced skew in distribution of imputation model.}
 \label{table:results_2}
 \end{table}
 
 
 
 \begin{table}
-\centering
-\begin{tabular}[ht]{|>{}c|c|c|c|c|c|c|>{}c|}
+\centering\footnotesize
+\begin{tabularx}{\textwidth}{c@{}c@{}c@{}c@{}c@{}cc@{}c}
 \hline
-\multicolumn{8}{|c|}{\textbf{Data Driven Simulation Scenario 3}} \\
-\cline{1-8}
-\multicolumn{2}{|c|}{\textbf{Model}} & \textbf{Interactions} & \textbf{Imputation} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{Relative Uncertainty}\\
+\multicolumn{8}{c}{\textbf{Data Driven Simulation Scenario 3}} \\
+\cmidrule{1-8}
+\multicolumn{2}{c}{\textbf{Model}} & \textbf{Interactions} & \textbf{Imputation} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{RU}\\
 \hline
  & IF &  & --- & 0 & 0 & 0.007 & 1.000\\
-\cline{2-2}
-\cline{4-8}
-\multirow{-2}{*}{\centering\arraybackslash CCMAR-based} & IWOR & \multirow{-2}{*}{\centering\arraybackslash ---} & --- & -1 & -5 & 0.020 & 2.983\\
-\cline{1-8}
+\cmidrule{2-2}
+\cmidrule{4-8}
+\multirow{-2}{*}{\centering\arraybackslash \shortstack{CCMAR-\\based}} & IWOR & \multirow{-2}{*}{\centering\arraybackslash ---} & --- & -1 & -5 & 0.020 & 2.983\\
+\cmidrule{1-8}
  &  &  & OLS/LR & 4 & 4 & 0.005 & 0.759\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 3 & 3 & 0.005 & 0.753\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 3 & 3 & 0.005 & 0.745\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -22 & -23 & 0.006 & 0.825\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & 0 & 0 & 0.004 & 0.650\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.004 & 0.646\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.645\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash OLS} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -19 & -19 & 0.005 & 0.804\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & 3 & 3 & 0.005 & 0.767\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 2 & 2 & 0.005 & 0.769\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 3 & 3 & 0.005 & 0.745\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -22 & -23 & 0.006 & 0.826\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & -1 & -1 & 0.005 & 0.717\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -1 & 0.005 & 0.695\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.644\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash GAM} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -18 & -18 & 0.005 & 0.811\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -2 & -2 & 0.004 & 0.662\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -2 & -2 & 0.004 & 0.661\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & -1 & -1 & 0.004 & 0.650\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-20}{*}{\centering\arraybackslash \shortstack{Outcome\\Regression}} & \multirow{-4}{*}{\centering\arraybackslash \shortstack{Random\\Forest}} & \multirow{-4}{*}{\centering\arraybackslash ---} & --- & -26 & -26 & 0.005 & 0.811\\
-\cline{1-8}
+\cmidrule{1-8}
  &  &  & OLS/LR & -5 & -5 & 0.005 & 0.744\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -5 & -5 & 0.005 & 0.728\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & -5 & -5 & 0.005 & 0.727\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -26 & -26 & 0.006 & 0.893\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & 1 & 1 & 0.004 & 0.658\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 1 & 1 & 0.004 & 0.658\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 1 & 1 & 0.004 & 0.655\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash \shortstack{Logistic\\Regression}} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -22 & -22 & 0.006 & 0.903\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -7 & -7 & 0.006 & 0.965\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -7 & -7 & 0.007 & 1.007\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & -5 & -5 & 0.005 & 0.723\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -26 & -26 & 0.006 & 0.879\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & -1 & -1 & 0.005 & 0.818\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -1 & 0.006 & 0.846\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 1 & 1 & 0.004 & 0.656\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash \shortstack{GAM\\(Logit Link)}} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -22 & -22 & 0.007 & 1.035\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -2 & -2 & 0.005 & 0.671\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -2 & -2 & 0.004 & 0.668\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 0 & 0 & 0.004 & 0.667\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-20}{*}{\centering\arraybackslash IPW} & \multirow{-4}{*}{\centering\arraybackslash \shortstack{Random\\Forest}} & \multirow{-4}{*}{\centering\arraybackslash ---} & --- & -19 & -19 & 0.005 & 0.747\\
 \hline
 \multicolumn{8}{l}{\rule{0pt}{1em}IF = Influence Function; IWOR = Inverse-Weighted Outcome Regression}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}\% Bias = 100 $\times$ Relative Bias of Mean Average Treatment Effect Estimate}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}\% M-Bias = 100 $\times$ Relative Bias of Median Average Treatment Effect Estimate}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}Relative Uncertainty = Ratio of standard error to standard error of CCMAR-based IF Estimator}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}\% Bias/\% M-Bias = 100 $\times$ bias of mean/median ATE estimate relative to true ATE}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}Relative Uncertainty (RU) = Ratio of standard error to standard error of CCMAR-based IF Estimator}\\
 \multicolumn{8}{l}{\rule{0pt}{1em}Imputation: Linear Regression (OLS), Logistic Regression (LR), True Data Generating Process (DGP)}\\
-\end{tabular}\caption{Data Driven Simulation Scenario $\# 3$: Factorization in Equation~\eqref{eqn:levis_factorization}, 2 partially missing confounders, amplified interactions between $A, L_{p}$, and $Y$ in joint imputation model, induced skew in distribution of imputation model.}
+\end{tabularx}\caption{Data Driven Simulation Scenario $\# 3$: Factorization in Equation~\eqref{eqn:levis_factorization}, 2 partially missing confounders, amplified interactions between $A, L_{p}$, and $Y$ in joint imputation model, induced skew in distribution of imputation model.}
 \label{table:results_3}
 \end{table}
 
@@ -312,103 +309,103 @@
 
 \begin{table}
 \centering
-\begin{tabular}[ht]{|>{}c|c|c|c|c|c|c|>{}c|}
+\footnotesize
+\begin{tabularx}{\textwidth}{c@{}c@{}c@{}c@{}c@{}cc@{}c}
 \hline
-\multicolumn{8}{|c|}{\textbf{Data Driven Simulation Scenario 4}} \\
-\cline{1-8}
-\multicolumn{2}{|c|}{\textbf{Model}} & \textbf{Interactions} & \textbf{Imputation} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{Relative Uncertainty}\\
+\multicolumn{8}{c}{\textbf{Data Driven Simulation Scenario 4}} \\
+\cmidrule{1-8}
+\multicolumn{2}{c}{\textbf{Model}} & \textbf{Interactions} & \textbf{Imputation} & \textbf{\% Bias} & \textbf{\% M-Bias} & \textbf{SE} & \textbf{RU}\\
 \hline
  & IF &  & --- & 8 & 2 & 0.045 & 1.000\\
-\cline{2-2}
-\cline{4-8}
-\multirow{-2}{*}{\centering\arraybackslash CCMAR-based} & IWOR & \multirow{-2}{*}{\centering\arraybackslash ---} & --- & -2 & -5 & 0.024 & 0.534\\
-\cline{1-8}
+\cmidrule{2-2}
+\cmidrule{4-8}
+\multirow{-2}{*}{\centering\arraybackslash \shortstack{CCMAR-\\based}} & IWOR & \multirow{-2}{*}{\centering\arraybackslash ---} & --- & -2 & -5 & 0.024 & 0.534\\
+\cmidrule{1-8}
  &  &  & OLS/LR & -1 & -1 & 0.006 & 0.124\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-2}{*}{\centering\arraybackslash \shortstack{Flexible Levis\\(Gamma $\lambda_1$)}} &  &  & OLS/LR w/ Interactions & 2 & 2 & 0.007 & 0.151\\
-\cline{1-1}
-\cline{4-8}
+\cmidrule{1-1}
+\cmidrule{4-8}
  &  &  & True DGP & 3 & 3 & 0.006 & 0.134\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-2}{*}{\centering\arraybackslash \shortstack{Flexible Levis\\(Guassian $\lambda_1$)}} &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -12 & -12 & 0.006 & 0.126\\
-\cline{1-1}
-\cline{3-8}
+\cmidrule{1-1}
+\cmidrule{3-8}
  &  &  & OLS/LR & -3 & -3 & 0.005 & 0.110\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.006 & 0.143\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 1 & 1 & 0.005 & 0.113\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash OLS} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -9 & -9 & 0.005 & 0.120\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -1 & -1 & 0.006 & 0.124\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 2 & 2 & 0.007 & 0.151\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 3 & 3 & 0.006 & 0.134\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -12 & -12 & 0.006 & 0.126\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & -3 & -3 & 0.005 & 0.111\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.006 & 0.144\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 2 & 2 & 0.005 & 0.113\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash GAM} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -9 & -9 & 0.005 & 0.121\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -4 & -4 & 0.005 & 0.111\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -1 & 0.007 & 0.146\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 1 & 1 & 0.005 & 0.114\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-16}{*}{\centering\arraybackslash \shortstack{Outcome\\Regression}} & \multirow{-4}{*}{\centering\arraybackslash \shortstack{Random\\Forest}} & \multirow{-4}{*}{\centering\arraybackslash ---} & --- & -12 & -12 & 0.005 & 0.120\\
-\cline{1-8}
+\cmidrule{1-8}
  &  &  & OLS/LR & -4 & -4 & 0.005 & 0.121\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.007 & 0.158\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 2 & 1 & 0.006 & 0.125\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -12 & -12 & 0.006 & 0.127\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & -3 & -3 & 0.005 & 0.113\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 1 & 1 & 0.007 & 0.146\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 2 & 2 & 0.005 & 0.119\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash \shortstack{Logistic\\Regression}} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -11 & -11 & 0.006 & 0.129\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -4 & -4 & 0.006 & 0.128\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -1 & -1 & 0.007 & 0.164\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 1 & 1 & 0.006 & 0.124\\
-\cline{4-8}
+\cmidrule{4-8}
  &  & \multirow{-4}{*}{\centering\arraybackslash None} & --- & -12 & -12 & 0.006 & 0.127\\
-\cline{3-8}
+\cmidrule{3-8}
  &  &  & OLS/LR & -3 & -3 & 0.005 & 0.117\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & 0 & 0 & 0.007 & 0.148\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & 2 & 2 & 0.005 & 0.114\\
-\cline{4-8}
+\cmidrule{4-8}
  & \multirow{-8}{*}{\centering\arraybackslash \shortstack{GAM\\(Logit Link)}} & \multirow{-4}{*}{\centering\arraybackslash Pairwise} & --- & -10 & -10 & 0.007 & 0.150\\
-\cline{2-8}
+\cmidrule{2-8}
  &  &  & OLS/LR & -4 & -4 & 0.005 & 0.114\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & OLS/LR w/ Interactions & -3 & -3 & 0.006 & 0.127\\
-\cline{4-8}
+\cmidrule{4-8}
  &  &  & True DGP & -2 & -2 & 0.005 & 0.121\\
-\cline{4-8}
+\cmidrule{4-8}
 \multirow{-20}{*}{\centering\arraybackslash IPW} & \multirow{-4}{*}{\centering\arraybackslash \shortstack{Random\\Forest}} & \multirow{-4}{*}{\centering\arraybackslash ---} & --- & -12 & -12 & 0.005 & 0.119\\
 \hline
 \multicolumn{8}{l}{\rule{0pt}{1em}IF = Influence Function; IWOR = Inverse-Weighted Outcome Regression}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}\% Bias = 100 $\times$ Relative Bias of Mean Average Treatment Effect Estimate}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}\% M-Bias = 100 $\times$ Relative Bias of Median Average Treatment Effect Estimate}\\
-\multicolumn{8}{l}{\rule{0pt}{1em}Relative Uncertainty = Ratio of standard error to standard error of Levis IF Estimator}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}\% Bias/\% M-Bias = 100 $\times$ bias of mean/median ATE estimate relative to true ATE}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}Relative Uncertainty (RU) = Ratio of standard error to standard error of CCMAR-based IF Estimator}\\
 \multicolumn{8}{l}{\rule{0pt}{1em}Imputation: Linear Regression (OLS), Logistic Regression (LR), True Data Generating Process (DGP)}\\
-\end{tabular}
+\end{tabularx}
 \end{table}\label{table:results_4}

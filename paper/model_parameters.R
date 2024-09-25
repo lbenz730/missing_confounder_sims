@@ -139,8 +139,10 @@ t1_1 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 4), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}ccccc>{}c}',.)
 
 
 t1_2 <- 
@@ -154,14 +156,17 @@ t1_2 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 4), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}ccccc>{}c}',.)
 
 
 
 paper_table <- 
   paste(
-    "\\begin{table}
+    "\\begin{sidewaystable}
+\\footnotesize
 \\begin{minipage}[t]{0.5\\textwidth}
 \\centering",
     t1_1, 
@@ -169,7 +174,7 @@ paper_table <-
 \\begin{minipage}[t]{0.5\\textwidth}',
     t1_2,
     '\\end{minipage}
-\\end{table}',
+\\end{sidewaystable}',
     sep = '\n'
   )
 write(paper_table, 'paper/model_param.tex')
@@ -191,8 +196,10 @@ t2_1 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 4), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}ccccc>{}c}',.)
 
 
 t2_2 <- 
@@ -207,14 +214,17 @@ t2_2 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 4), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}ccccc>{}c}',.)
 
 
 
 sup_table_1 <- 
   paste(
-    "\\begin{table}
+    "\\begin{sidewaystable}
+    \\footnotesize
 \\begin{minipage}[t]{0.5\\textwidth}
 \\centering",
     t2_1, 
@@ -222,7 +232,7 @@ sup_table_1 <-
 \\begin{minipage}[t]{0.5\\textwidth}',
     t2_2,
     '\\end{minipage}
-\\end{table}',
+\\end{sidewaystable}',
     sep = '\n'
   )
 
@@ -239,8 +249,10 @@ t3_1 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 4), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}ccccc>{}c}',.)
 
 
 t3_2 <- 
@@ -255,14 +267,17 @@ t3_2 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 4), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}ccccc>{}c}',.)
 
 
 
 sup_table_2 <- 
   paste(
-    "\\begin{table}
+    "\\begin{sidewaystable}
+    \\footnotesize
 \\begin{minipage}[t]{0.5\\textwidth}
 \\centering",
     t3_1, 
@@ -270,7 +285,7 @@ sup_table_2 <-
 \\begin{minipage}[t]{0.5\\textwidth}',
     t3_2,
     '\\end{minipage}
-\\end{table}',
+\\end{sidewaystable}',
     sep = '\n'
   )
 
@@ -289,8 +304,10 @@ t4_1 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 4), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}ccccc>{}c}',.)
 
 
 t4_2 <- 
@@ -305,14 +322,17 @@ t4_2 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 4), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{4\\}\\{c}', '\\multicolumn\\{4\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}ccccc>{}c}',.)
 
 
 
 sup_table_3 <- 
   paste(
-    "\\begin{table}
+    "\\begin{sidewaystable}
+    \\footnotesize
 \\begin{minipage}[t]{0.5\\textwidth}
 \\centering",
     t4_1, 
@@ -320,7 +340,7 @@ sup_table_3 <-
 \\begin{minipage}[t]{0.5\\textwidth}',
     t4_2,
     '\\end{minipage}
-\\end{table}',
+\\end{sidewaystable}',
     sep = '\n'
   )
 
@@ -338,8 +358,10 @@ t5_1 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 3), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{3\\}\\{c}', '\\multicolumn\\{3\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{3\\}\\{c}', '\\multicolumn\\{3\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}cccc>{}c}',.)
 
 
 t5_2 <- 
@@ -354,14 +376,20 @@ t5_2 <-
   add_header_above(c(" " = 1, " " = 1, 'Data Driven Simulation Scenario' = 3), bold = T) %>% 
   row_spec(0, bold = T) %>% 
   gsub('0.000', '< 0.001', .) %>% 
-  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{\\|c\\|\\}', .) %>% 
-  gsub('\\multicolumn\\{3\\}\\{c}', '\\multicolumn\\{3\\}\\{\\|c\\|\\}', .)
+  gsub('\\multicolumn\\{1\\}\\{c\\|\\}', '\\multicolumn\\{1\\}\\{c\\}', .) %>% 
+  gsub('\\multicolumn\\{3\\}\\{c}', '\\multicolumn\\{3\\}\\{c\\}', .) %>% 
+  gsub('cline', 'cmidrule', .) %>%    
+  gsub('\\{\\|>\\{\\}c\\|c\\|c\\|c\\|>\\{\\}c\\|\\}', '{>{}cccc>{}c}',.)
+
+
+  
 
 
 
 sup_table_4 <- 
   paste(
-    "\\begin{table}
+    "\\begin{sidewaystable}
+    \\footnotesize
 \\begin{minipage}[t]{0.5\\textwidth}
 \\centering",
     t5_1, 
@@ -369,7 +397,7 @@ sup_table_4 <-
 \\begin{minipage}[t]{0.5\\textwidth}',
     t5_2,
     '\\end{minipage}
-\\end{table}',
+\\end{sidewaystable}',
     sep = '\n'
   )
 

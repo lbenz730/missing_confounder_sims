@@ -3,11 +3,14 @@ library(here)
 
 ### Custom ggplot theme
 theme_set(theme_bw() +
-            theme(plot.title = element_text(hjust = 0.5, size = 24),
-                  plot.subtitle = element_text(hjust = 0.5, size = 18),
-                  axis.title = element_text(size = 20),
-                  strip.text = element_text(size = 14),
+            theme(plot.title = element_text(hjust = 0.5, size = 36),
+                  plot.subtitle = element_text(hjust = 0.5, size = 24),
+                  axis.title = element_text(size = 24),
+                  axis.text = element_text(size = 16),
+                  strip.text = element_text(size = 18),
                   plot.caption = element_text(size = 10),
+                  legend.text = element_text(size = 16),
+                  legend.title = element_text(size = 20),
                   legend.position = "bottom"))
 
 
@@ -45,5 +48,5 @@ ggplot(df_levis_graph, aes(x = estimate_hat)) +
        title = 'Distribution of Treatment Effect Estimates',
        subtitle = 'Data Driven Simulation Scenario 1') +
   scale_fill_discrete(labels = function(x) scales::number(as.numeric(x), big.mark = ','))
-ggsave(here('paper/levis_skew_by_contrast.pdf'), height = 9, width = 16)
+ggsave(here('paper/levis_skew_by_contrast.pdf'), height = 9/1.2, width = 16/1.2)
 
